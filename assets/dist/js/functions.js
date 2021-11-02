@@ -43,13 +43,15 @@ function calculatePayments(loan_interes, loan_interval, intallment_interval, las
         html = `<tr><td colspan="4"><div class="alert alert-danger" role="alert">The Start Date or Loan Amount or Installment Interval or Installment Amount or Simple Interest Rate is not correct!</div></td></tr>`;
         $('#table_loan').find('tbody').append(html);
     } else {
+        debugger;
+        let totalPaymentAmount = (payoff_payment/loan_interval);
         while (payoff_payment>0) {
             next_day = next_day.addDays(0);
 
-            payoff_payment = payoff_payment-loan_interval;
+            payoff_payment = payoff_payment-totalPaymentAmount;
             newPayment = new Intl.NumberFormat("en-US", {minimumIntegerDigits:2, style: "currency", currency: "USD"}).format(payoff_payment);
 
-            html = `<tr><td>${i}</td><td>${next_day.toLocaleDateString("en-US")}</td><td>${new Intl.NumberFormat("en-US", {minimumIntegerDigits:2, style: "currency", currency: "USD"}).format(loan_interval)}</td><td>${newPayment}</td></tr>`;
+            html = `<tr><td>${i}</td><td>${next_day.toLocaleDateString("en-US")}</td><td>${new Intl.NumberFormat("en-US", {minimumIntegerDigits:2, style: "currency", currency: "USD"}).format(totalPaymentAmount)}</td><td>${newPayment}</td></tr>`;
             i++;
             $('#table_loan').find('tbody').append(html);
 
