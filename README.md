@@ -16,4 +16,4 @@ The Output:
 - HTML Table with scheduled payments
 - Estimated payoff date
 
-Download the code of this repository and run index.html
+Download the code of this repository (or clone) and run index.html
