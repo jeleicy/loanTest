@@ -1,9 +1,6 @@
 
 # Jeleicy Figueroa Test
-
-#############################
-LoanTest
-#############################
+# LoanTest
 
 This is a Loan Repayment Calculator, developed on Javascript, HTML, Bootstrap
 
